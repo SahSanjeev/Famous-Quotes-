@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover 100 iconic quotes from history's greatest thinkers, philosophers, scientists, and leaders. Search by author, filter by category, and find daily inspiration.">
+  <title>QuoteVerse — 100 Famous Quotes & Timeless Wisdom</title>
+  
+  <!-- Google Fonts: Outfit (UI) and Newsreader/Playfair Display (Quote typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <!-- Ambient background lighting effects -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- Main Application Wrapper -->
+  <div class="app-container">
+    
+    <!-- Navigation / Top Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+            <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.324 1.533-4.2 3.666-4.298 5.163.486-.255 1.05-.395 1.65-.395 2.059 0 3.725 1.666 3.725 3.725 0 2.059-1.666 3.725-3.725 3.725-1.077 0-2.054-.457-2.692-1.098zm11 0C14.553 16.227 14 15 14 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.324 1.533-4.2 3.666-4.298 5.163.486-.255 1.05-.395 1.65-.395 2.059 0 3.725 1.666 3.725 3.725 0 2.059-1.666 3.725-3.725 3.725-1.077 0-2.054-.457-2.692-1.098z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">QuoteVerse</h1>
+          <p class="brand-subtitle">100 Timeless Quotes & Perspectives</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="badge-total" id="badge-total-quotes" title="Curated archive size">
+          <span class="pulse-dot"></span>
+          <span id="header-quote-count">100 Quotes</span>
+        </div>
+
+        <button id="btn-favorites-drawer" class="btn-icon" aria-label="View favorite quotes" title="Saved Favorites">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span id="favorites-count-badge" class="badge-count hidden">0</span>
+        </button>
+
+        <button id="btn-theme-toggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg id="icon-sun" class="hidden" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Stage -->
+    <main>
+      <!-- Hero Spotlight: Random Quote Card -->
+      <section class="spotlight-section">
+        <div class="spotlight-card" id="spotlight-card">
+          <!-- Quote card watermark mark -->
+          <div class="quote-mark-watermark" aria-hidden="true">“</div>
+          
+          <div class="spotlight-meta-top">
+            <span class="tag-category" id="spotlight-category">Wisdom</span>
+            <span class="spotlight-year" id="spotlight-year">1929</span>
+            <span class="spotlight-id" id="spotlight-id">#1</span>
+          </div>
+
+          <div class="quote-content-wrapper">
+            <blockquote class="spotlight-quote" id="spotlight-text">
+              "The only way to do great work is to love what you do."
+            </blockquote>
+          </div>
+
+          <div class="spotlight-attribution">
+            <div class="author-avatar" id="spotlight-avatar" aria-hidden="true">SJ</div>
+            <div class="author-details">
+              <cite class="spotlight-author" id="spotlight-author">Steve Jobs</cite>
+              <span class="spotlight-profession" id="spotlight-profession">Co-founder of Apple</span>
+            </div>
+          </div>
+
+          <!-- Interactive Action Buttons -->
+          <div class="spotlight-actions">
+            <div class="action-buttons-group">
+              <button id="btn-copy-quote" class="btn-action" title="Copy to Clipboard" aria-label="Copy quote">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy</span>
+              </button>
+
+              <button id="btn-speak-quote" class="btn-action" title="Listen to Quote" aria-label="Listen to quote">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+                <span id="speak-btn-text">Listen</span>
+              </button>
+
+              <button id="btn-favorite-quote" class="btn-action" title="Save to Favorites" aria-label="Save quote">
+                <svg id="spotlight-heart-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span id="favorite-btn-text">Favorite</span>
+              </button>
+
+              <button id="btn-share-twitter" class="btn-action" title="Share on X" aria-label="Share on X">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                <span>Share</span>
+              </button>
+            </div>
+
+            <!-- Next Random Quote CTA -->
+            <button id="btn-random-quote" class="btn-primary" aria-label="Generate random quote">
+              <svg class="dice-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"></circle>
+                <circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"></circle>
+                <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+                <circle cx="8.5" cy="15.5" r="1.5" fill="currentColor"></circle>
+                <circle cx="15.5" cy="15.5" r="1.5" fill="currentColor"></circle>
+              </svg>
+              <span>Random Quote</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search & Filtering Hub -->
+      <section class="filter-hub-section" id="filter-hub">
+        <div class="search-filter-card">
+          
+          <div class="search-controls-row">
+            <!-- Search bar -->
+            <div class="search-input-wrapper">
+              <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search quotes, keywords, or author names..." 
+                autocomplete="off"
+                aria-label="Search quotes"
+              >
+              <button id="btn-clear-search" class="btn-clear hidden" aria-label="Clear search">×</button>
+            </div>
+
+            <!-- Author Filter Dropdown -->
+            <div class="author-select-wrapper">
+              <svg class="author-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <select id="author-select" aria-label="Filter by Author">
+                <option value="all">All Authors</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Category Chips / Pills -->
+          <div class="categories-container">
+            <span class="categories-label">Categories:</span>
+            <div class="category-pills" id="category-pills-list">
+              <button class="category-pill active" data-category="all" id="pill-all">All <span class="pill-count">100</span></button>
+              <!-- Populated via JavaScript -->
+            </div>
+          </div>
+
+          <!-- Controls Subbar: View toggles and stats -->
+          <div class="filter-status-bar">
+            <div class="result-count-text">
+              Showing <span id="displayed-count">100</span> of <span id="total-pool-count">100</span> quotes
+              <span id="active-filter-indicator" class="active-filter-tag hidden"></span>
+            </div>
+
+            <div class="view-mode-toggle">
+              <button id="btn-view-grid" class="btn-tab active" title="Browse all quotes as cards">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                  <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                  <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                  <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                </svg>
+                <span>Browse Cards</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quotes Cards Grid / Explorer -->
+      <section class="quotes-grid-section" id="quotes-grid-section">
+        <div class="quotes-grid" id="quotes-grid">
+          <!-- Populated dynamically via app.js -->
+        </div>
+
+        <!-- Empty State Message -->
+        <div id="empty-state" class="empty-state hidden">
+          <div class="empty-icon">🔍</div>
+          <h3>No matching quotes found</h3>
+          <p>Try adjusting your search terms, author, or category filters.</p>
+          <button id="btn-reset-filters" class="btn-secondary">Reset Filters</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Favorites Drawer / Slide-Over Modal -->
+    <aside id="favorites-drawer" class="drawer hidden" aria-labelledby="drawer-title" role="dialog" aria-modal="true">
+      <div class="drawer-overlay" id="drawer-overlay"></div>
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <div class="drawer-header-left">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#ef4444" stroke="#ef4444">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            <h2 id="drawer-title">Saved Favorites</h2>
+            <span id="drawer-favorites-count" class="badge-count-static">0</span>
+          </div>
+          <button id="btn-close-drawer" class="btn-icon" aria-label="Close favorites drawer">✕</button>
+        </div>
+
+        <div class="drawer-body" id="favorites-list">
+          <!-- Favorite items or empty favorites state -->
+        </div>
+
+        <div class="drawer-footer" id="drawer-footer">
+          <button id="btn-clear-favorites" class="btn-text-danger">Clear All Favorites</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Floating Toast Notification -->
+    <div id="toast" class="toast hidden" role="status" aria-live="polite">
+      <span id="toast-icon">✓</span>
+      <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>QuoteVerse • Built with Python Flask, Vanilla JS & Modern CSS</p>
+      <p class="footer-sub">100 hand-picked timeless quotes across Philosophy, Science, Art, and Life.</p>
+    </footer>
+  </div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
